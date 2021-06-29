@@ -1,4 +1,4 @@
-string ari(string  s){
+string ari(string s){
  
  int let=0, word=0 , sen =0;
  
@@ -7,7 +7,7 @@ string ari(string  s){
  if(isalpha(s[i]){
     let++;
     }
- if(i==0 && s[i]!='  ' || i != len-1 && s[i]==' ' && s[i+1]!= ' '){
+ if(i==0 && s[i]!=' ' || i != len-1 && s[i]==' ' && s[i+1]!= ' '){
   word++;
   }
  if(s[i] == '!' || s[i]=='?' || s[i]=='.'){
