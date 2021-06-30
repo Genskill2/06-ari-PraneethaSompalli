@@ -1,10 +1,18 @@
+#include <stdio.h>
+#include <assert.h>
+#include <string.h>
+#include <cs50.h>
+
+string ari(string);
+
+
 string ari(string s){
  
  int let=0, word=0 , sen =0;
  
  int len = strlen(s);
  for(int i=0;i<len ;i++){
- if(isalpha(s[i]){
+ if(isalnum(s[i]){
     let++;
     }
  if(i==0 && s[i]!=' ' || i != len-1 && s[i]==' ' && s[i+1]!= ' '){
@@ -15,7 +23,7 @@ string ari(string s){
   }
   }
   
-  int score = round (4.71*(len/word) + 0.5*(word/sen) - 21.43);
+  int score = round (4.71* (float((len/word))) + 0.5*(float (word/sen)) - 21.43);
   
   switch(score){
    case(1):
