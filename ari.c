@@ -5,59 +5,56 @@
 
 string ari(string);
 
+string grade (int);
 
-string ari(string s){
+string ari(string st)
+{
  
- int let=0, word=0 , sen =0;
- 
- int len = strlen(s);
- for(int i=0;i<len ;i++){
- if(isalnum(s[i]){
-    let++;
-    }
- if(i==0 && s[i]!=' ' || i != len-1 && s[i]==' ' && s[i+1]!= ' '){
-  word++;
-  }
- if(s[i] == '!' || s[i]=='?' || s[i]=='.'){
-  sen++;
-  }
-  }
-  
-  int score = round (4.71* (float((len/word))) + 0.5*(float (word/sen)) - 21.43);
-  
+  int w=0,s=0,l=0;
+ for(int i=0;i<strlen(st);i++)
+ {
+   
+   if(st[i]>='0' && st[i]<='9')
+    l++;
+   else if(st[i]>='a' && st[i]<='z')
+    l++;
+   else if(st[i]>='A' && st[i]<='Z')
+    l++;
+    
+   if(st[i]==' ')
+    w++;
+   else if(st[i]=='.' || st[i]=='?')
+    s++;
+    else if(st[i]=='!')
+    s++;
+   
+ }
+   
+  float score = (4.71*(float)(l)/w)+(0.5*((float)(w)/s))-21.43;
+  string grade(int score)
+{
   switch(score){
-   case(1):
-    printf("Kindergarten");
-   case(2):
-    printf("First/Second Grade");
-   case(3):
-    printf("Third Grade");
-   case(4):
-    printf("Fourth Grade");
-    case(5):
-    printf("Fifth Grade ");
-     case(6):
-    printf("Sixth Grade ");
-     case(7):
-    printf("Seventh Grade ");
-    case(8):
-    printf("Eighth Grade");
-    case(9):
-    printf("Ninth Grade ");
-    case(10):
-    printf("Tennth Grade ");
-    case(11):
-    printf("Eleventh Grade ");
-    case(12):
-    printf("Twelfth grade");
-   case(13):
-    printf("College student ");
-    case(14):
-    printf("Professor ");
-    
-    
-    
-return 0;
-}
-    
+  
+ case 1 : return"Kindergarten";
+ case 2 :  return "First/Second Grade";
+ case 3 : return "Third Grade";
+ case 4 : return "Fourth Grade";
+ case 5 : return " Fifth Grade";
+ case 6 : return "Sixth Grade";
+ case 7  : return "Seventh Grade";
+ case  8 : return "Eighth Grade";
+ case  9 : return "Ninth Grade";
+ case 10 : return "Tenth Grade";
+ case 11 : return "Eleventh Grade";
+ case 12 : return "Twelfth grade";
+ case 13 : return "College student";
+ case 14: return "Professor";
+  
  
+    
+    }
+    }
+  st = grade((int)(score)+1);
+  
+  return st;
+}
